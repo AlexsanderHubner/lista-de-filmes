@@ -8,19 +8,19 @@ const searchURL = BASE_URL + '/search/movie?'+API_KEY;
 const genres = [
     {
       "id": 28,
-      "name": "Action"
+      "name": "Açao"
     },
     {
       "id": 12,
-      "name": "Adventure"
+      "name": "Aventura"
     },
     {
       "id": 16,
-      "name": "Animation"
+      "name": "Animação"
     },
     {
       "id": 35,
-      "name": "Comedy"
+      "name": "Comedia"
     },
     {
       "id": 80,
@@ -28,7 +28,7 @@ const genres = [
     },
     {
       "id": 99,
-      "name": "Documentary"
+      "name": "Documentario"
     },
     {
       "id": 18,
@@ -36,27 +36,27 @@ const genres = [
     },
     {
       "id": 10751,
-      "name": "Family"
+      "name": "Famalia"
     },
     {
       "id": 14,
-      "name": "Fantasy"
+      "name": "Fantasia"
     },
     {
       "id": 36,
-      "name": "History"
+      "name": "Historia"
     },
     {
       "id": 27,
-      "name": "Horror"
+      "name": "Terror"
     },
     {
       "id": 10402,
-      "name": "Music"
+      "name": "Musica"
     },
     {
       "id": 9648,
-      "name": "Mystery"
+      "name": "Misterio"
     },
     {
       "id": 10749,
@@ -64,7 +64,7 @@ const genres = [
     },
     {
       "id": 878,
-      "name": "Science Fiction"
+      "name": "Ficçao Cientifica"
     },
     {
       "id": 10770,
@@ -72,15 +72,15 @@ const genres = [
     },
     {
       "id": 53,
-      "name": "Thriller"
+      "name": "Trailler"
     },
     {
       "id": 10752,
-      "name": "War"
+      "name": "Guerra"
     },
     {
       "id": 37,
-      "name": "Western"
+      "name": "Ocidental"
     }
   ]
 
@@ -133,13 +133,13 @@ function setGenre() {
 function highlightSelection() {
     const tags = document.querySelectorAll('.tag');
     tags.forEach(tag => {
-        tag.classList.remove('highlight')
+        tag.classList.remove('Destaque')
     })
     clearBtn()
     if(selectedGenre.length !=0){   
         selectedGenre.forEach(id => {
             const hightlightedTag = document.getElementById(id);
-            hightlightedTag.classList.add('highlight');
+            hightlightedTag.classList.add('Destaque');
         })
     }
 
@@ -148,11 +148,11 @@ function highlightSelection() {
 function clearBtn(){
     let clearBtn = document.getElementById('clear');
     if(clearBtn){
-        clearBtn.classList.add('highlight')
+        clearBtn.classList.add('Destaque')
     }else{
             
         let clear = document.createElement('div');
-        clear.classList.add('tag','highlight');
+        clear.classList.add('tag','Destaque');
         clear.id = 'clear';
         clear.innerText = 'Clear x';
         clear.addEventListener('click', () => {
@@ -279,7 +279,6 @@ function openNav(movie) {
   })
 }
 
-/* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
